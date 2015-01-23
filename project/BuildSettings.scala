@@ -6,12 +6,12 @@ import sbt._
 object BuildSettings {
   val VERSION = "0.0.1-SNAPSHOT"
 
-  val basicSettings = Defaults.defaultSettings ++ seq(
+  val basicSettings = Defaults.coreDefaultSettings ++ seq(
     version := VERSION,
-    homepage := Some(new URL("https://lifecosys.com/developer/lifecosys-customer-assistant")),
-    organization := "com.lifecosys",
-    organizationHomepage := Some(new URL("https://lifecosys.com")),
-    description := "Lifecosys customer assistant.",
+    homepage := Some(new URL("https://demo.com/developer/demo-customer-assistant")),
+    organization := "com.demo",
+    organizationHomepage := Some(new URL("https://demo.com")),
+    description := "demo customer assistant.",
     startYear := Some(2015),
     scalaVersion := "2.11.4",
     scalacOptions := Seq(
@@ -28,7 +28,7 @@ object BuildSettings {
 
   import net.virtualvoid.sbt.graph.Plugin._
 
-  lazy val projectBuildSettings = basicSettings ++ formattingSettings ++ graphSettings ++ webappSettings ++
+  lazy val projectBuildSettings = basicSettings ++ formattingSettings ++ graphSettings ++
     Seq(
       publishMavenStyle := true
     )

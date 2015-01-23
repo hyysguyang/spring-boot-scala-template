@@ -14,7 +14,7 @@ object Dependencies {
   def container(deps: ModuleID*): Seq[ModuleID] = deps map (_ % "container")
 
 
-  object SpringBoo {
+  object SpringBoot {
     val springBootVersion = "1.2.1.RELEASE"
 
     lazy val dependencies = compile(security, aop, jdbc, dataJpa, solr,
