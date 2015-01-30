@@ -6,7 +6,9 @@ import sbt._
 object BuildSettings {
   val VERSION = "0.0.1-SNAPSHOT"
 
-  val basicSettings = Defaults.coreDefaultSettings ++ seq(
+  val lifecycle=addCommandAlias("install", ";test;it:test;publishLocal") ++ addCommandAlias("testing", ";test;it:test")
+
+  val basicSettings = Defaults.coreDefaultSettings ++ lifecycle ++ Seq(
     version := VERSION,
     homepage := Some(new URL("https://demo.com/developer/demo-customer-assistant")),
     organization := "com.demo",

@@ -20,7 +20,9 @@ object ProjectBuild extends Build {
     )
   lazy val integrationTest = Project("integration-test", file("integration-test"))
     .dependsOn(core)
+    .configs(IntegrationTest)
     .settings(projectBuildSettings: _*)
     .settings(Defaults.itSettings: _*)
-    .settings(libraryDependencies ++= test(SpringBoot.testing,scalatest))
+    .settings(fork in IntegrationTest := true)
+    .settings(libraryDependencies ++= it(SpringBoot.testing, scalatest) ++ test(SpringBoot.testing, scalatest))
 }

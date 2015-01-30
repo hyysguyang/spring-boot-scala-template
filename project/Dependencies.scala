@@ -1,5 +1,8 @@
 import sbt._
 
+/**
+ * @author Young Gu
+ */
 object Dependencies {
 
 
@@ -8,6 +11,8 @@ object Dependencies {
   def provided(deps: ModuleID*): Seq[ModuleID] = deps map (_ % "provided")
 
   def test(deps: ModuleID*): Seq[ModuleID] = deps map (_ % "test")
+
+  def it(deps: ModuleID*): Seq[ModuleID] = deps map (_ % "it")
 
   def runtime(deps: ModuleID*): Seq[ModuleID] = deps map (_ % "runtime")
 
@@ -50,7 +55,7 @@ object Dependencies {
 
   val scalalogging = "com.typesafe.scala-logging" %% "scala-logging" % "3.1.0"
 
-  val scalatest = "org.scalatest" % "scalatest_2.11" % "2.2.1"
+  val scalatest = "org.scalatest" % "scalatest_2.11" % "2.2.3"
 
 
 }
